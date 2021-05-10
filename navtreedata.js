@@ -1,7 +1,40 @@
+/*
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
+
+ The MIT License (MIT)
+
+ Copyright (C) 1997-2020 by Dimitri van Heesch
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
+*/
 var NAVTREE =
 [
   [ "FlatBuffers", "index.html", [
-    [ "Overview", "index.html#flatbuffers_overview", null ],
+    [ "Overview", "index.html#flatbuffers_overview", [
+      [ "Why use FlatBuffers?", "index.html#autotoc_md0", [
+        [ "Why not use Protocol Buffers, or .. ?", "index.html#autotoc_md1", null ],
+        [ "But all the cool kids use JSON!", "index.html#autotoc_md2", null ],
+        [ "Who uses FlatBuffers?", "index.html#autotoc_md3", null ]
+      ] ],
+      [ "Usage in brief", "index.html#autotoc_md4", null ],
+      [ "In-depth documentation", "index.html#autotoc_md5", null ],
+      [ "Online resources", "index.html#autotoc_md6", null ]
+    ] ],
     [ "Programmer's Guide", "usergroup0.html", [
       [ "Building", "flatbuffers_guide_building.html", null ],
       [ "Tutorial", "flatbuffers_guide_tutorial.html", null ],
@@ -51,9 +84,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-".html",
-"classcom_1_1google_1_1flatbuffers_1_1_flex_buffers_1_1_reference.html#a7bc5bc1def05910a487f71f73b11ae07",
-"classflatbuffers_1_1_vector.html#abf919e27aa3e9b60ac30386972c94e65"
+"annotated.html",
+"classcom_1_1google_1_1flatbuffers_1_1_flex_buffers_1_1_reference.html#a88e02b8243b089486ee6768d3ebf26b9",
+"classflatbuffers_1_1_vector.html#a7703f4b1cbb1f99087b48cd58abb740e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

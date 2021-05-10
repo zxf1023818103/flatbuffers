@@ -5,7 +5,6 @@ var hierarchy =
     ] ],
     [ "flatbuffers::Array< T, length >", "classflatbuffers_1_1_array.html", null ],
     [ "flatbuffers::Array< Offset< T >, length >", "classflatbuffers_1_1_array_3_01_offset_3_01_t_01_4_00_01length_01_4.html", null ],
-    [ "com.google.flatbuffers.ArrayReadWriteBuf", "classcom_1_1google_1_1flatbuffers_1_1_array_read_write_buf.html", null ],
     [ "BaseVector", null, [
       [ "com.google.flatbuffers.BooleanVector", "classcom_1_1google_1_1flatbuffers_1_1_boolean_vector.html", null ],
       [ "com.google.flatbuffers.ByteVector", "classcom_1_1google_1_1flatbuffers_1_1_byte_vector.html", null ],
@@ -21,14 +20,13 @@ var hierarchy =
     [ "com.google.flatbuffers.FlatBufferBuilder.ByteBufferFactory", "classcom_1_1google_1_1flatbuffers_1_1_flat_buffer_builder_1_1_byte_buffer_factory.html", [
       [ "com.google.flatbuffers.FlatBufferBuilder.HeapByteBufferFactory", "classcom_1_1google_1_1flatbuffers_1_1_flat_buffer_builder_1_1_heap_byte_buffer_factory.html", null ]
     ] ],
-    [ "com.google.flatbuffers.ByteBufferReadWriteBuf", "classcom_1_1google_1_1flatbuffers_1_1_byte_buffer_read_write_buf.html", null ],
     [ "com.google.flatbuffers.ByteBufferUtil", "classcom_1_1google_1_1flatbuffers_1_1_byte_buffer_util.html", null ],
     [ "flatbuffers::DetachedBuffer", "classflatbuffers_1_1_detached_buffer.html", null ],
     [ "flatbuffers::FlatBufferBuilder::FieldLoc", "structflatbuffers_1_1_flat_buffer_builder_1_1_field_loc.html", null ],
-    [ "Google\\FlatBuffers\\FlatbufferBuilder", "class_google_1_1_flat_buffers_1_1_flatbuffer_builder.html", null ],
+    [ "com.google.flatbuffers.FlatBufferBuilder", "classcom_1_1google_1_1flatbuffers_1_1_flat_buffer_builder.html", null ],
     [ "FlatBuffers.FlatBufferBuilder", "class_flat_buffers_1_1_flat_buffer_builder.html", null ],
     [ "flatbuffers::FlatBufferBuilder", "classflatbuffers_1_1_flat_buffer_builder.html", null ],
-    [ "com.google.flatbuffers.FlatBufferBuilder", "classcom_1_1google_1_1flatbuffers_1_1_flat_buffer_builder.html", null ],
+    [ "Google\\FlatBuffers\\FlatbufferBuilder", "class_google_1_1_flat_buffers_1_1_flatbuffer_builder.html", null ],
     [ "com.google.flatbuffers.FlexBuffers", "classcom_1_1google_1_1flatbuffers_1_1_flex_buffers.html", null ],
     [ "com.google.flatbuffers.FlexBuffersBuilder", "classcom_1_1google_1_1flatbuffers_1_1_flex_buffers_builder.html", null ],
     [ "flatbuffers::IndirectHelper< T >", "structflatbuffers_1_1_indirect_helper.html", null ],
@@ -37,8 +35,14 @@ var hierarchy =
     [ "com.google.flatbuffers.FlexBuffers.Key", "classcom_1_1google_1_1flatbuffers_1_1_flex_buffers_1_1_key.html", null ],
     [ "com.google.flatbuffers.FlexBuffers.KeyVector", "classcom_1_1google_1_1flatbuffers_1_1_flex_buffers_1_1_key_vector.html", null ],
     [ "flatbuffers::Offset< T >", "structflatbuffers_1_1_offset.html", null ],
+    [ "com.google.flatbuffers.ReadBuf", "interfacecom_1_1google_1_1flatbuffers_1_1_read_buf.html", [
+      [ "com.google.flatbuffers.ReadWriteBuf", "interfacecom_1_1google_1_1flatbuffers_1_1_read_write_buf.html", [
+        [ "com.google.flatbuffers.ArrayReadWriteBuf", "classcom_1_1google_1_1flatbuffers_1_1_array_read_write_buf.html", null ],
+        [ "com.google.flatbuffers.ByteBufferReadWriteBuf", "classcom_1_1google_1_1flatbuffers_1_1_byte_buffer_read_write_buf.html", null ]
+      ] ]
+    ] ],
     [ "com.google.flatbuffers.FlexBuffers.Reference", "classcom_1_1google_1_1flatbuffers_1_1_flex_buffers_1_1_reference.html", null ],
-    [ "reverse_iterator", null, [
+    [ "std::reverse_iterator", null, [
       [ "flatbuffers::VectorReverseIterator< Iterator >", "structflatbuffers_1_1_vector_reverse_iterator.html", null ]
     ] ],
     [ "RuntimeException", null, [

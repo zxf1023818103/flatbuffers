@@ -15,6 +15,8 @@ var annotated_dup =
           [ "FloatVector", "classcom_1_1google_1_1flatbuffers_1_1_float_vector.html", "classcom_1_1google_1_1flatbuffers_1_1_float_vector" ],
           [ "IntVector", "classcom_1_1google_1_1flatbuffers_1_1_int_vector.html", "classcom_1_1google_1_1flatbuffers_1_1_int_vector" ],
           [ "LongVector", "classcom_1_1google_1_1flatbuffers_1_1_long_vector.html", "classcom_1_1google_1_1flatbuffers_1_1_long_vector" ],
+          [ "ReadBuf", "interfacecom_1_1google_1_1flatbuffers_1_1_read_buf.html", "interfacecom_1_1google_1_1flatbuffers_1_1_read_buf" ],
+          [ "ReadWriteBuf", "interfacecom_1_1google_1_1flatbuffers_1_1_read_write_buf.html", "interfacecom_1_1google_1_1flatbuffers_1_1_read_write_buf" ],
           [ "ShortVector", "classcom_1_1google_1_1flatbuffers_1_1_short_vector.html", "classcom_1_1google_1_1flatbuffers_1_1_short_vector" ],
           [ "StringVector", "classcom_1_1google_1_1flatbuffers_1_1_string_vector.html", "classcom_1_1google_1_1flatbuffers_1_1_string_vector" ],
           [ "UnionVector", "classcom_1_1google_1_1flatbuffers_1_1_union_vector.html", "classcom_1_1google_1_1flatbuffers_1_1_union_vector" ],
@@ -23,6 +25,9 @@ var annotated_dup =
           [ "Utf8Safe", "classcom_1_1google_1_1flatbuffers_1_1_utf8_safe.html", "classcom_1_1google_1_1flatbuffers_1_1_utf8_safe" ]
         ] ]
       ] ]
+    ] ],
+    [ "FlatBuffers", "namespace_flat_buffers.html", [
+      [ "FlatBufferBuilder", "class_flat_buffers_1_1_flat_buffer_builder.html", "class_flat_buffers_1_1_flat_buffer_builder" ]
     ] ],
     [ "flatbuffers", null, [
       [ "Allocator", "classflatbuffers_1_1_allocator.html", "classflatbuffers_1_1_allocator" ],
@@ -42,7 +47,6 @@ var annotated_dup =
       [ "VectorOfAny", "classflatbuffers_1_1_vector_of_any.html", "classflatbuffers_1_1_vector_of_any" ],
       [ "VectorReverseIterator", "structflatbuffers_1_1_vector_reverse_iterator.html", "structflatbuffers_1_1_vector_reverse_iterator" ]
     ] ],
-    [ "FlatBuffers", "namespace_flat_buffers.html", "namespace_flat_buffers" ],
     [ "Google", null, [
       [ "FlatBuffers", null, [
         [ "FlatbufferBuilder", "class_google_1_1_flat_buffers_1_1_flatbuffer_builder.html", "class_google_1_1_flat_buffers_1_1_flatbuffer_builder" ]
