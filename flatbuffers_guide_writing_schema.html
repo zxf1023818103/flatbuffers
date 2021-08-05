@@ -205,7 +205,7 @@ Includes</h2>
 <p>When using the <code>flatc</code> compiler to generate code for schema definitions, only definitions in the current file will be generated, not those from the included files (those you still generate separately).</p>
 <h2><a class="anchor" id="autotoc_md24"></a>
 Root type</h2>
-<p>This declares what you consider to be the root table (or struct) of the serialized data. This is particularly important for parsing JSON data, which doesn't include object type information.</p>
+<p>This declares what you consider to be the root table of the serialized data. This is particularly important for parsing JSON data, which doesn't include object type information.</p>
 <h2><a class="anchor" id="autotoc_md25"></a>
 File identification and extension</h2>
 <p>Typically, a FlatBuffer binary buffer is not self-describing, i.e. it needs you to know its schema to parse it correctly. But if you want to use a FlatBuffer as a file format, it would be convenient to be able to have a "magic number" in there, like most file formats have, to be able to do a sanity check to see if you're reading the kind of file you're expecting.</p>
@@ -330,7 +330,7 @@ Schema evolution examples</h2>
 </pre><p> This is also ok. Code compiled with the old schema reading newer data will now always get the default value for <code>a</code> since it is not present. Code compiled with the new schema now cannot read nor write <code>a</code> anymore (any existing code that tries to do so will result in compile errors), but can still read old data (they will ignore the field). </p><pre class="fragment">table { c:int; a:int; b:int; }
 </pre><p> This is NOT ok, as this makes the schemas incompatible. Old code reading newer data will interpret <code>c</code> as if it was <code>a</code>, and new code reading old data accessing <code>a</code> will instead receive <code>b</code>. </p><pre class="fragment">table { c:int (id: 2); a:int (id: 0); b:int (id: 1); }
 </pre><p> This is ok. If your intent was to order/group fields in a way that makes sense semantically, you can do so using explicit id assignment. Now we are compatible with the original schema, and the fields can be ordered in any way, as long as we keep the sequence of ids. </p><pre class="fragment">table { b:int; }
-</pre><p> NOT ok. We can only remove a field by deprecation, regardless of wether we use explicit ids or not. </p><pre class="fragment">table { a:uint; b:uint; }
+</pre><p> NOT ok. We can only remove a field by deprecation, regardless of whether we use explicit ids or not. </p><pre class="fragment">table { a:uint; b:uint; }
 </pre><p> This is MAYBE ok, and only in the case where the type change is the same size, like here. If old data never contained any negative numbers, this will be safe to do. </p><pre class="fragment">table { a:int = 1; b:int = 2; }
 </pre><p> Generally NOT ok. Any older data written that had 0 values were not written to the buffer, and rely on the default value to be recreated. These will now have those values appear to <code>1</code> and <code>2</code> instead. There may be cases in which this is ok, but care must be taken. </p><pre class="fragment">table { aa:int; bb:int; }
 </pre><p> Occasionally ok. You've renamed fields, which will break all code (and JSON files!) that use this schema, but as long as the change is obvious, this is not incompatible with the actual binary buffers, since those only ever address fields by id/offset. <br  />
@@ -341,8 +341,10 @@ Testing whether a field is present in a table</h2>
 <p>FlatBuffers will not write fields that are equal to their default value, sometimes resulting in significant space savings. However, this also means we cannot disambiguate the meaning of non-presence as "written default value" or "not written at all". This only applies to scalar fields since only they support default values. Unless otherwise specified, their default is 0.</p>
 <p>If you care about the presence of scalars, most languages support "optional
 scalars." You can set <code>null</code> as the default value in the schema. <code>null</code> is a value that's outside of all types, so we will always write if <code>add_field</code> is called. The generated field accessor should use the local language's canonical optional type.</p>
-<p>Some <code>FlatBufferBuilder</code> implementations have an option called <code>force_defaults</code> that circumvents this "not writing defaults" behavior you can then use <code>IsFieldPresent</code> to query presence.</p>
-<p>Another option that works in all languages is to wrap a scalar field in a struct. This way it will return null if it is not present. This will be slightly less ergonomic but structs don't take up any more space than the scalar they represent. </p>
+<p>Some <code>FlatBufferBuilder</code> implementations have an option called <code>force_defaults</code> that circumvents this "not writing defaults" behavior you can then use <code>IsFieldPresent</code> to query presence. / Another option that works in all languages is to wrap a scalar field in a struct. This way it will return null if it is not present. This will be slightly less ergonomic but structs don't take up any more space than the scalar they represent.</p>
+<h1><a class="anchor" id="autotoc_md37"></a>
+Writing your own code generator.</h1>
+<p>See <a class="el" href="intermediate_representation.html">our intermediate representation</a>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -49,6 +49,7 @@ var menudata={children:[
 {text:"Benchmarks",url:"flatbuffers_benchmarks.html"},
 {text:"FlatBuffers white paper",url:"flatbuffers_white_paper.html"},
 {text:"FlatBuffers internals",url:"flatbuffers_internals.html"},
+{text:"Intermediate Representation",url:"intermediate_representation.html"},
 {text:"Grammar of the schema language",url:"flatbuffers_grammar.html"},
 {text:"API Reference",url:"usergroup2.html",children:[
 {text:"APIs",url:"modules.html"},

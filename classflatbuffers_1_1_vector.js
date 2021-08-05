@@ -6,6 +6,7 @@ var classflatbuffers_1_1_vector =
     [ "mutable_return_type", "classflatbuffers_1_1_vector.html#a7703f4b1cbb1f99087b48cd58abb740e", null ],
     [ "return_type", "classflatbuffers_1_1_vector.html#a28dab085738663f5c866cf6570bb6289", null ],
     [ "reverse_iterator", "classflatbuffers_1_1_vector.html#aebe9837cb57e88212975ec5187f37c55", null ],
+    [ "scalar_tag", "classflatbuffers_1_1_vector.html#a995cc811f602d0033b0279b87d284563", null ],
     [ "value_type", "classflatbuffers_1_1_vector.html#afd34dcff877ae083f4bd1fe8ef22c06e", null ],
     [ "Vector", "classflatbuffers_1_1_vector.html#ab51b30f24f9841203b4364af38d424b8", null ],
     [ "begin", "classflatbuffers_1_1_vector.html#ac1ab40cdffad6cd50c222fe42c51437b", null ],
@@ -36,5 +37,6 @@ var classflatbuffers_1_1_vector =
     [ "rend", "classflatbuffers_1_1_vector.html#a921bd6ee4b999b1c9ec9abc339c377b2", null ],
     [ "rend", "classflatbuffers_1_1_vector.html#a5d61bd0fd7d9017b1d62c45416666669", null ],
     [ "size", "classflatbuffers_1_1_vector.html#a602e093850b2984a95581edc0b47b2f3", null ],
+    [ "is_span_observable", "classflatbuffers_1_1_vector.html#a6aeec72d30df9d5e12ec59262a4d5ad5", null ],
     [ "length_", "classflatbuffers_1_1_vector.html#a62170e531ab5fcef8b4c717c0e84553d", null ]
 ];

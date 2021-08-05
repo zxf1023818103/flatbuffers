@@ -94,21 +94,21 @@ $(document).ready(function(){initNavTree('flatbuffers_guide_use_dart.html',''); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_DartUsage"></a></p>
-<h1><a class="anchor" id="autotoc_md69"></a>
+<h1><a class="anchor" id="autotoc_md70"></a>
 Before you get started</h1>
 <p>Before diving into the FlatBuffers usage in Dart, it should be noted that the <a class="el" href="flatbuffers_guide_tutorial.html">Tutorial</a> page has a complete guide to general FlatBuffers usage in all of the supported languages (including Dart). This page is designed to cover the nuances of FlatBuffers usage, specific to Dart.</p>
 <p>You should also have read the <a class="el" href="flatbuffers_guide_building.html">Building</a> documentation to build <code>flatc</code> and should be familiar with <a class="el" href="flatbuffers_guide_using_schema_compiler.html">Using the schema compiler</a> and <a class="el" href="flatbuffers_guide_writing_schema.html">Writing a schema</a>.</p>
-<h1><a class="anchor" id="autotoc_md70"></a>
+<h1><a class="anchor" id="autotoc_md71"></a>
 FlatBuffers Dart library code location</h1>
 <p>The code for the FlatBuffers Dart library can be found at <code>flatbuffers/dart</code>. You can browse the library code on the <a href="https://github.com/google/flatbuffers/tree/master/dart">FlatBuffers GitHub page</a>.</p>
-<h1><a class="anchor" id="autotoc_md71"></a>
+<h1><a class="anchor" id="autotoc_md72"></a>
 Testing the FlatBuffers Dart library</h1>
 <p>The code to test the Dart library can be found at <code>flatbuffers/tests</code>. The test code itself is located in <a href="https://github.com/google/
 flatbuffers/blob/master/tests/dart_test.dart">dart_test.dart</a>.</p>
 <p>To run the tests, use the <a href="https://github.com/google/flatbuffers/
 blob/master/tests/DartTest.sh">DartTest.sh</a> shell script.</p>
 <p><em>Note: The shell script requires the <a href="https://www.dartlang.org/tools/sdk">Dart SDK</a> to be installed.</em></p>
-<h1><a class="anchor" id="autotoc_md72"></a>
+<h1><a class="anchor" id="autotoc_md73"></a>
 Using the FlatBuffers Dart library</h1>
 <p><em>Note: See <a class="el" href="flatbuffers_guide_tutorial.html">Tutorial</a> for a more in-depth example of how to use FlatBuffers in Dart.</em></p>
 <p>FlatBuffers supports reading and writing binary FlatBuffers in Dart.</p>
@@ -124,7 +124,7 @@ Using the FlatBuffers Dart library</h1>
 </div><!-- fragment --><p>Now you can access values like this:</p>
 <div class="fragment"><div class="line">var hp = monster.hp;</div>
 <div class="line">var pos = monster.pos;</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md73"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md74"></a>
 Differences from the Dart SDK Front End flat_buffers</h1>
 <p>The work in this repository is signfiicantly based on the implementation used internally by the Dart SDK in the front end/analyzer package. Several significant changes have been made.</p>
 <ol type="1">
@@ -134,12 +134,25 @@ Differences from the Dart SDK Front End flat_buffers</h1>
 <li>The SDK implementation treats int64 and uint64 as float64s. This implementation does not. This may cause problems with JavaScript compatibility - however, it should be possible to use the JavaScript implementation, or to do a customized implementation that treats all 64 bit numbers as floats. Supporting the Dart VM and Flutter was a more important goal of this implementation. Support for 16 bit integers was also added.</li>
 <li>The code generation in this offers an "ObjectBuilder", which generates code very similar to the SDK classes that consume FlatBuffers, as well as Builder classes, which produces code which more closely resembles the builders in other languages. The ObjectBuilder classes are easier to use, at the cost of additional references allocated.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md74"></a>
+<h1><a class="anchor" id="autotoc_md75"></a>
 Text Parsing</h1>
 <p>There currently is no support for parsing text (Schema's and JSON) directly from Dart, though you could use the C++ parser through Dart Native Extensions. Please see the C++ documentation for more on text parsing (note that this is not currently an option in Flutter - follow <a href="https://github.com/flutter/flutter/issues/7053">this issue</a> for the latest).</p>
-<p><br  />
- </p>
-</div></div><!-- contents -->
+<h1><a class="anchor" id="autotoc_md76"></a>
+Object based API</h1>
+<p>FlatBuffers is all about memory efficiency, which is why its base API is written around using as little as possible of it. This does make the API clumsier (requiring pre-order construction of all data, and making mutation harder).</p>
+<p>For times when efficiency is less important a more convenient object based API can be used (through <code>--gen-object-api</code>) that is able to unpack &amp; pack a FlatBuffer into objects and lists, allowing for convenient construction, access and mutation.</p>
+<p>To use:</p>
+<div class="fragment"><div class="line">// Deserialize from buffer into object.</div>
+<div class="line">MonsterT monster = Monster(flatbuffer).unpack();</div>
+<div class="line"> </div>
+<div class="line">// Update object directly like a Dart class instance.</div>
+<div class="line">print(monster.Name);</div>
+<div class="line">monster.Name = &quot;Bob&quot;;  // Change the name.</div>
+<div class="line"> </div>
+<div class="line">// Serialize into new flatbuffer.</div>
+<div class="line">final fbb = Builder();</div>
+<div class="line">fbb.Finish(monster.pack(fbb));</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- Google Analytics -->

@@ -10,8 +10,8 @@ var classflatbuffers_1_1_array =
     [ "cbegin", "classflatbuffers_1_1_array.html#ab77a4e365df1c8f92b23ba290850cdcb", null ],
     [ "cend", "classflatbuffers_1_1_array.html#a2965190c2f307ee733bcf06384bf1cbb", null ],
     [ "CopyFromSpan", "classflatbuffers_1_1_array.html#a459e3784ef433678828e1f6dce583754", null ],
-    [ "CopyFromSpanImpl", "classflatbuffers_1_1_array.html#ab5cfd8bc82dfb43eedca9e64ffae4b7f", null ],
-    [ "CopyFromSpanImpl", "classflatbuffers_1_1_array.html#a7c3ff49a6ed9576cb659f308da35ac74", null ],
+    [ "CopyFromSpanImpl", "classflatbuffers_1_1_array.html#ab3b8dfa37fdd6ac224fa21b97606d99b", null ],
+    [ "CopyFromSpanImpl", "classflatbuffers_1_1_array.html#a7154384b6fd55bd7eb6fea4556b37461", null ],
     [ "crbegin", "classflatbuffers_1_1_array.html#a0c44e968453f813e89a6876d91f3a3ac", null ],
     [ "crend", "classflatbuffers_1_1_array.html#a348aed71a81bf7c9adcc4f7f5d131ce3", null ],
     [ "Data", "classflatbuffers_1_1_array.html#a5bb12607269eb1cf857f9401baa307cf", null ],
@@ -23,11 +23,12 @@ var classflatbuffers_1_1_array =
     [ "GetEnum", "classflatbuffers_1_1_array.html#aa9d081d782c23ad782c9b499ae2e701c", null ],
     [ "GetMutablePointer", "classflatbuffers_1_1_array.html#a14aab91bc340064ee5d31dc36ad2ffce", null ],
     [ "Mutate", "classflatbuffers_1_1_array.html#a2c9b05e49518115552f6f550cd844b64", null ],
-    [ "MutateImpl", "classflatbuffers_1_1_array.html#a1080a86d1dd0a767e6cbb12023e4b9da", null ],
-    [ "MutateImpl", "classflatbuffers_1_1_array.html#a7b51a178fb3eeb3f5ab1fa5a6ec7e813", null ],
+    [ "MutateImpl", "classflatbuffers_1_1_array.html#ae824273e4c5e98cdd075100fd2b654ff", null ],
+    [ "MutateImpl", "classflatbuffers_1_1_array.html#a8473825261d1fca4e384edfeabc0699a", null ],
     [ "operator[]", "classflatbuffers_1_1_array.html#abb558b81e4f92c2c0b3195c5efceb5b0", null ],
     [ "rbegin", "classflatbuffers_1_1_array.html#af00e71a586f8842a66047806db4a3371", null ],
     [ "rend", "classflatbuffers_1_1_array.html#ab1179436593ebd7576a19d884a509cec", null ],
     [ "size", "classflatbuffers_1_1_array.html#a43f5115933697ef5066319dbde1bfc51", null ],
-    [ "data_", "classflatbuffers_1_1_array.html#adfb542aeb0528b606187162ed44952df", null ]
+    [ "data_", "classflatbuffers_1_1_array.html#adfb542aeb0528b606187162ed44952df", null ],
+    [ "is_span_observable", "classflatbuffers_1_1_array.html#a8055cdf5a0cc33fde943a169a343af77", null ]
 ];

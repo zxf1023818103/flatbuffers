@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('flatbuffers_guide_tutorial.html',''); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_Tutorial"></a></p>
-<h1><a class="anchor" id="autotoc_md176"></a>
+<h1><a class="anchor" id="autotoc_md179"></a>
 Overview</h1>
 <p>This tutorial provides a basic example of how to work with <a class="el" href="index.html#flatbuffers_overview">FlatBuffers</a>. We will step through a simple example application, which shows you how to:</p>
 <ul>
@@ -182,11 +182,11 @@ Overview</h1>
   $('input[type=radio]').on("click", displayChosenLanguage);
 </script>
 </p>
-<h1><a class="anchor" id="autotoc_md177"></a>
+<h1><a class="anchor" id="autotoc_md180"></a>
 Where to Find the Example Code</h1>
 <p>Samples demonstating the concepts in this example are located in the source code package, under the <code>samples</code> directory. You can browse the samples on GitHub <a href="https://github.com/google/flatbuffers/tree/master/samples">here</a>.</p>
 <div class="language-c"> <em>Note: The above does not apply to C, instead <a href="https://github.com/dvidelabs/flatcc/tree/master/samples">look here</a>.</em> </div><p>For your chosen language, please cross-reference with:</p>
-<div class="language-cpp"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.cpp">sample_binary.cpp</a> </div> <div class="language-java"> <a href="https://github.com/google/flatbuffers/blob/master/samples/SampleBinary.java">SampleBinary.java</a> </div> <div class="language-kotlin"> <a href="https://github.com/google/flatbuffers/blob/master/samples/SampleBinary.kt">SampleBinary.kt</a> </div> <div class="language-csharp"> <a href="https://github.com/google/flatbuffers/blob/master/samples/SampleBinary.cs">SampleBinary.cs</a> </div> <div class="language-go"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.go">sample_binary.go</a> </div> <div class="language-python"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.py">sample_binary.py</a> </div> <div class="language-javascript"> No sample binary is provided, since JS needs to be transpiled from TypeScript. Please see TypeScript support. </div> <div class="language-typescript"> <em>none yet</em> </div> <div class="language-php"> <a href="https://github.com/google/flatbuffers/blob/master/samples/SampleBinary.php">SampleBinary.php</a> </div> <div class="language-c"> <a href="https://github.com/dvidelabs/flatcc/blob/master/samples/monster/monster.c">monster.c</a> </div> <div class="language-dart"> <a href="https://github.com/google/flatbuffers/blob/master/dart/example/example.dart">example.dart</a> </div> <div class="language-lua"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.lua">sample_binary.lua</a> </div> <div class="language-lobster"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.lobster">sample_binary.lobster</a> </div> <div class="language-rust"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.rs">sample_binary.rs</a> </div> <div class="language-swift"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.swift">sample_binary.swift</a> </div><h1><a class="anchor" id="autotoc_md178"></a>
+<div class="language-cpp"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.cpp">sample_binary.cpp</a> </div> <div class="language-java"> <a href="https://github.com/google/flatbuffers/blob/master/samples/SampleBinary.java">SampleBinary.java</a> </div> <div class="language-kotlin"> <a href="https://github.com/google/flatbuffers/blob/master/samples/SampleBinary.kt">SampleBinary.kt</a> </div> <div class="language-csharp"> <a href="https://github.com/google/flatbuffers/blob/master/samples/SampleBinary.cs">SampleBinary.cs</a> </div> <div class="language-go"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.go">sample_binary.go</a> </div> <div class="language-python"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.py">sample_binary.py</a> </div> <div class="language-javascript"> No sample binary is provided, since JS needs to be transpiled from TypeScript. Please see TypeScript support. </div> <div class="language-typescript"> <em>none yet</em> </div> <div class="language-php"> <a href="https://github.com/google/flatbuffers/blob/master/samples/SampleBinary.php">SampleBinary.php</a> </div> <div class="language-c"> <a href="https://github.com/dvidelabs/flatcc/blob/master/samples/monster/monster.c">monster.c</a> </div> <div class="language-dart"> <a href="https://github.com/google/flatbuffers/blob/master/dart/example/example.dart">example.dart</a> </div> <div class="language-lua"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.lua">sample_binary.lua</a> </div> <div class="language-lobster"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.lobster">sample_binary.lobster</a> </div> <div class="language-rust"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.rs">sample_binary.rs</a> </div> <div class="language-swift"> <a href="https://github.com/google/flatbuffers/blob/master/samples/sample_binary.swift">sample_binary.swift</a> </div><h1><a class="anchor" id="autotoc_md181"></a>
 Writing the Monsters' FlatBuffer Schema</h1>
 <p>To start working with FlatBuffers, you first need to create a <code>schema</code> file, which defines the format for each data structure you wish to serialize. Here is the <code>schema</code> that defines the template for our monsters:</p>
 <div class="fragment"><div class="line">// Example IDL file for our monster&#39;s schema.</div>
@@ -235,10 +235,10 @@ Writing the Monsters' FlatBuffer Schema</h1>
 <div class="line">  name:string;</div>
 <div class="line">  damage:int16;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md179"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md182"></a>
 More Information About Schemas</h3>
 <p>You can find a complete guide to writing <code>schema</code> files in the <a class="el" href="flatbuffers_guide_writing_schema.html">Writing a schema</a> section of the Programmer's Guide. You can also view the formal <a class="el" href="flatbuffers_grammar.html">Grammar of the schema language</a>.</p>
-<h1><a class="anchor" id="autotoc_md180"></a>
+<h1><a class="anchor" id="autotoc_md183"></a>
 Compiling the Monsters' Schema</h1>
 <p>After you have written the FlatBuffers schema, the next step is to compile it.</p>
 <p>If you have not already done so, please follow <a class="el" href="flatbuffers_guide_building.html">these instructions</a> to build <code>flatc</code>, the FlatBuffer compiler.</p>
@@ -282,10 +282,10 @@ Compiling the Monsters' Schema</h1>
 </div><!-- fragment --> </div> <div class="language-swift"> <div class="fragment"><div class="line">cd flatbuffers/samples</div>
 <div class="line">./../flatc --swift monster.fbs</div>
 </div><!-- fragment --> </div><p>For a more complete guide to using the <code>flatc</code> compiler, please read the <a class="el" href="flatbuffers_guide_using_schema_compiler.html">Using the schema compiler</a> section of the Programmer's Guide.</p>
-<h1><a class="anchor" id="autotoc_md181"></a>
+<h1><a class="anchor" id="autotoc_md184"></a>
 Reading and Writing Monster FlatBuffers</h1>
 <p>Now that we have compiled the schema for our programming language, we can start creating some monsters and serializing/deserializing them from FlatBuffers.</p>
-<h3><a class="anchor" id="autotoc_md182"></a>
+<h3><a class="anchor" id="autotoc_md185"></a>
 Creating and Writing Orc FlatBuffers</h3>
 <p>The first step is to import/include the library, generated files, etc.</p>
 <div class="language-cpp"> <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;monster_generated.h&quot;</span> <span class="comment">// This was generated by `flatc`.</span></div>
@@ -392,7 +392,7 @@ Creating and Writing Orc FlatBuffers</h3>
 <div class="language-cpp"> <div class="fragment"><div class="line"><span class="comment">// Create a `FlatBufferBuilder`, which will be used to create our</span></div>
 <div class="line"><span class="comment">// monsters&#39; FlatBuffers.</span></div>
 <div class="line"><a class="code" href="classflatbuffers_1_1_flat_buffer_builder.html">flatbuffers::FlatBufferBuilder</a> builder(1024);</div>
-<div class="ttc" id="aclassflatbuffers_1_1_flat_buffer_builder_html"><div class="ttname"><a href="classflatbuffers_1_1_flat_buffer_builder.html">flatbuffers::FlatBufferBuilder</a></div><div class="ttdoc">Helper class to hold data needed in creation of a FlatBuffer.</div><div class="ttdef"><b>Definition:</b> flatbuffers.h:1144</div></div>
+<div class="ttc" id="aclassflatbuffers_1_1_flat_buffer_builder_html"><div class="ttname"><a href="classflatbuffers_1_1_flat_buffer_builder.html">flatbuffers::FlatBufferBuilder</a></div><div class="ttdoc">Helper class to hold data needed in creation of a FlatBuffer.</div><div class="ttdef"><b>Definition:</b> flatbuffers.h:1215</div></div>
 </div><!-- fragment --> </div> <div class="language-java"> <div class="fragment"><div class="line"><span class="comment">// Create a `FlatBufferBuilder`, which will be used to create our</span></div>
 <div class="line"><span class="comment">// monsters&#39; FlatBuffers.</span></div>
 <div class="line">FlatBufferBuilder builder = <span class="keyword">new</span> FlatBufferBuilder(1024);</div>
@@ -1206,7 +1206,7 @@ Creating and Writing Orc FlatBuffers</h3>
 <p>In our example, the last two things we added to our <code>Monster</code> were the <code>Equipped Type</code> and the <code>Equipped</code> union itself.</p>
 <p>Here is a repetition of these lines, to help highlight them more clearly:</p>
 <div class="language-cpp"> <div class="fragment"><div class="line">monster_builder.add_equipped_type(Equipment_Weapon); <span class="comment">// Union type</span></div>
-<div class="line">monster_builder.add_equipped(axe); <span class="comment">// Union data</span></div>
+<div class="line">monster_builder.add_equipped(axe.Union()); <span class="comment">// Union data</span></div>
 </div><!-- fragment --> </div> <div class="language-java"> <div class="fragment"><div class="line">Monster.addEquippedType(builder, Equipment.Weapon); <span class="comment">// Union type</span></div>
 <div class="line">Monster.addEquipped(axe); <span class="comment">// Union data</span></div>
 </div><!-- fragment --> </div> <div class="language-kotlin"> <div class="fragment"><div class="line">Monster.addEquippedType(builder, Equipment.Weapon) // Union type</div>
@@ -1350,7 +1350,7 @@ Creating and Writing Orc FlatBuffers</h3>
 </div><!-- fragment --> </div><p>Now you can write the bytes to a file or send them over the network. <b>Make sure your file mode (or transfer protocol) is set to BINARY, not text.</b> If you transfer a FlatBuffer in text mode, the buffer will be corrupted, which will lead to hard to find problems when you read the buffer.</p>
 <div class="language-javascript"> For example, in Node you can simply do: <div class="fragment"><div class="line">writeFileSync(&#39;monster.bin&#39;, buf, &#39;binary&#39;);</div>
 </div><!-- fragment --> </div> <div class="language-typescript"> For example, in Node you can simply do: <div class="fragment"><div class="line">writeFileSync(&#39;monster.bin&#39;, buf, &#39;binary&#39;);</div>
-</div><!-- fragment --> </div><h3><a class="anchor" id="autotoc_md183"></a>
+</div><!-- fragment --> </div><h3><a class="anchor" id="autotoc_md186"></a>
 Reading Orc FlatBuffers</h3>
 <p>Now that we have successfully created an <code>Orc</code> FlatBuffer, the monster data can be saved, sent over a network, etc. Let's now adventure into the inverse, and access a FlatBuffer.</p>
 <p>This section requires the same import/include, namespace, etc. requirements as before:</p>
@@ -1892,7 +1892,7 @@ Reading Orc FlatBuffers</h3>
 <div class="line">  let name = _weapon.name // should return &quot;Axe&quot;</div>
 <div class="line">  let dmg = _weapon.damage // should return 5</div>
 <div class="line">}</div>
-</div><!-- fragment --> </div><h1><a class="anchor" id="autotoc_md184"></a>
+</div><!-- fragment --> </div><h1><a class="anchor" id="autotoc_md187"></a>
 Mutating FlatBuffers</h1>
 <p>As you saw above, typically once you have created a FlatBuffer, it is read-only from that moment on. There are, however, cases where you have just received a FlatBuffer, and you'd like to modify something about it before sending it on to another recipient. With the above functionality, you'd have to generate an entirely new FlatBuffer, while tracking what you modified in your own data structures. This is inconvenient.</p>
 <p>For this reason FlatBuffers can also be mutated in-place. While this is great for making small fixes to an existing buffer, you generally want to create buffers from scratch whenever possible, since it is much more efficient and the API is much more general purpose.</p>
@@ -1935,10 +1935,10 @@ Mutating FlatBuffers</h1>
 <p>Note that any <code>mutate</code> functions on a table will return a boolean, which is <code>false</code> if the field we're trying to set is not present in the buffer. Fields are not present if they weren't set, or even if they happen to be equal to the default value. For example, in the creation code above, the <code>mana</code> field is equal to <code>150</code>, which is the default value, so it was never stored in the buffer. Trying to call the corresponding <code>mutate</code> method for <code>mana</code> on such data will return <code>false</code>, and the value won't actually be modified!</p>
 <p>One way to solve this is to call <code>ForceDefaults</code> on a FlatBufferBuilder to force all fields you set to actually be written. This, of course, increases the size of the buffer somewhat, but this may be acceptable for a mutable buffer.</p>
 <p>If this is not sufficient, other ways of mutating FlatBuffers may be supported in your language through an object based API (<code>--gen-object-api</code>) or reflection. See the individual language documents for support.</p>
-<h1><a class="anchor" id="autotoc_md185"></a>
+<h1><a class="anchor" id="autotoc_md188"></a>
 Using &lt;tt&gt;flatc&lt;/tt&gt; as a JSON Conversion Tool</h1>
 <p>If you are working with C, C++, or Lobster, you can parse JSON at runtime. If your language does not support JSON at the moment, <code>flatc</code> may provide an alternative. Using <code>flatc</code> is often the preferred method, as it doesn't require you to add any new code to your program. It is also efficient, since you can ship with the binary data. The drawback is that it requires an extra step for your users/developers to perform (although it may be able to be automated as part of your compilation).</p>
-<h3><a class="anchor" id="autotoc_md186"></a>
+<h3><a class="anchor" id="autotoc_md189"></a>
 JSON to binary representation</h3>
 <p>Let's say you have a JSON file that describes your monster. In this example, we will use the file <code>flatbuffers/samples/monsterdata.json</code>.</p>
 <p>Here are the contents of the file:</p>
@@ -1969,14 +1969,14 @@ JSON to binary representation</h3>
 </div><!-- fragment --><p>You can run this file through the <code>flatc</code> compiler with the <code>-b</code> flag and our <code>monster.fbs</code> schema to produce a FlatBuffer binary file.</p>
 <div class="fragment"><div class="line">./../flatc --binary monster.fbs monsterdata.json</div>
 </div><!-- fragment --><p>The output of this will be a file <code>monsterdata.bin</code>, which will contain the FlatBuffer binary representation of the contents from our <code>.json</code> file.</p>
-<div class="language-cpp"> <em>Note: If you're working in C++, you can also parse JSON at runtime. See the <a class="el" href="flatbuffers_guide_use_cpp.html">Use in C++</a> section of the Programmer's Guide for more information.</em> </div> <div class="language-c"> <em>Note: If you're working in C, the <code>flatcc --json</code> (not <code>flatc</code>) compiler will generate schema specific high performance json parsers and printers that you can compile and use at runtime. The <code>flatc</code> compiler (not <code>flatcc</code>) on the other hand, is still useful for general offline json to flatbuffer conversion from a given schema. There are no current plans for <code>flatcc</code> to support this.</em> </div> <div class="language-lobster"> <em>Note: If you're working in Lobster, you can also parse JSON at runtime. See the <a class="el" href="flatbuffers_guide_use_lobster.html">Use in Lobster</a> section of the Programmer's Guide for more information.</em> </div><h3><a class="anchor" id="autotoc_md187"></a>
+<div class="language-cpp"> <em>Note: If you're working in C++, you can also parse JSON at runtime. See the <a class="el" href="flatbuffers_guide_use_cpp.html">Use in C++</a> section of the Programmer's Guide for more information.</em> </div> <div class="language-c"> <em>Note: If you're working in C, the <code>flatcc --json</code> (not <code>flatc</code>) compiler will generate schema specific high performance json parsers and printers that you can compile and use at runtime. The <code>flatc</code> compiler (not <code>flatcc</code>) on the other hand, is still useful for general offline json to flatbuffer conversion from a given schema. There are no current plans for <code>flatcc</code> to support this.</em> </div> <div class="language-lobster"> <em>Note: If you're working in Lobster, you can also parse JSON at runtime. See the <a class="el" href="flatbuffers_guide_use_lobster.html">Use in Lobster</a> section of the Programmer's Guide for more information.</em> </div><h3><a class="anchor" id="autotoc_md190"></a>
 FlatBuffer binary to JSON</h3>
 <p>Converting from a FlatBuffer binary representation to JSON is supported as well: </p><div class="fragment"><div class="line">./../flatc --json --raw-binary monster.fbs -- monsterdata.bin</div>
 </div><!-- fragment --><p> This will convert <code>monsterdata.bin</code> back to its original JSON representation. You need to pass the corresponding FlatBuffers schema so that flatc knows how to interpret the binary buffer. Since <code>monster.fbs</code> does not specify an explicit <code>file_identifier</code> for binary buffers, <code>flatc</code> needs to be forced into reading the <code>.bin</code> file using the <code>--raw-binary</code> option.</p>
 <p>The FlatBuffer binary representation does not explicitly encode default values, therefore they are not present in the resulting JSON unless you specify <code>--defaults-json</code>.</p>
 <p>If you intend to process the JSON with other tools, you may consider switching on <code>--strict-json</code> so that identifiers are quoted properly.</p>
 <p><em>Note: The resulting JSON file is not necessarily identical with the original JSON. If the binary representation contains floating point numbers, floats and doubles are rounded to 6 and 12 digits, respectively, in order to represent them as decimals in the JSON document.</em></p>
-<h1><a class="anchor" id="autotoc_md188"></a>
+<h1><a class="anchor" id="autotoc_md191"></a>
 Advanced Features for Each Language</h1>
 <p>Each language has a dedicated <code>Use in XXX</code> page in the Programmer's Guide to cover the nuances of FlatBuffers in that language.</p>
 <p>For your chosen language, see:</p>

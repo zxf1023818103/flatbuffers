@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classflatbuffers_1_1_array.html',''); 
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classflatbuffers_1_1_array-members.html">List of all members</a>  </div>
@@ -176,20 +177,25 @@ return_type&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b>
 FLATBUFFERS_CONSTEXPR uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</td></tr>
 <tr class="separator:a43f5115933697ef5066319dbde1bfc51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a8055cdf5a0cc33fde943a169a343af77"><td class="memItemLeft" align="right" valign="top">static FLATBUFFERS_CONSTEXPR bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_span_observable</b></td></tr>
+<tr class="separator:a8055cdf5a0cc33fde943a169a343af77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab5cfd8bc82dfb43eedca9e64ffae4b7f"><td class="memItemLeft" align="right" valign="top"><a id="ab5cfd8bc82dfb43eedca9e64ffae4b7f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyFromSpanImpl</b> (flatbuffers::integral_constant&lt; bool, false &gt;, flatbuffers::span&lt; const T, length &gt; src)</td></tr>
-<tr class="separator:ab5cfd8bc82dfb43eedca9e64ffae4b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c3ff49a6ed9576cb659f308da35ac74"><td class="memItemLeft" align="right" valign="top"><a id="a7c3ff49a6ed9576cb659f308da35ac74"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyFromSpanImpl</b> (flatbuffers::integral_constant&lt; bool, true &gt;, flatbuffers::span&lt; const T, length &gt; src)</td></tr>
-<tr class="separator:a7c3ff49a6ed9576cb659f308da35ac74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1080a86d1dd0a767e6cbb12023e4b9da"><td class="memItemLeft" align="right" valign="top"><a id="a1080a86d1dd0a767e6cbb12023e4b9da"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MutateImpl</b> (flatbuffers::integral_constant&lt; bool, false &gt;, uoffset_t i, const T &amp;val)</td></tr>
-<tr class="separator:a1080a86d1dd0a767e6cbb12023e4b9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b51a178fb3eeb3f5ab1fa5a6ec7e813"><td class="memItemLeft" align="right" valign="top"><a id="a7b51a178fb3eeb3f5ab1fa5a6ec7e813"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MutateImpl</b> (flatbuffers::integral_constant&lt; bool, true &gt;, uoffset_t i, const T &amp;val)</td></tr>
-<tr class="separator:a7b51a178fb3eeb3f5ab1fa5a6ec7e813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b8dfa37fdd6ac224fa21b97606d99b"><td class="memItemLeft" align="right" valign="top"><a id="ab3b8dfa37fdd6ac224fa21b97606d99b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyFromSpanImpl</b> (flatbuffers::false_type, flatbuffers::span&lt; const T, length &gt; src)</td></tr>
+<tr class="separator:ab3b8dfa37fdd6ac224fa21b97606d99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7154384b6fd55bd7eb6fea4556b37461"><td class="memItemLeft" align="right" valign="top"><a id="a7154384b6fd55bd7eb6fea4556b37461"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyFromSpanImpl</b> (flatbuffers::true_type, flatbuffers::span&lt; const T, length &gt; src)</td></tr>
+<tr class="separator:a7154384b6fd55bd7eb6fea4556b37461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae824273e4c5e98cdd075100fd2b654ff"><td class="memItemLeft" align="right" valign="top"><a id="ae824273e4c5e98cdd075100fd2b654ff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>MutateImpl</b> (flatbuffers::false_type, uoffset_t i, const T &amp;val)</td></tr>
+<tr class="separator:ae824273e4c5e98cdd075100fd2b654ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8473825261d1fca4e384edfeabc0699a"><td class="memItemLeft" align="right" valign="top"><a id="a8473825261d1fca4e384edfeabc0699a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>MutateImpl</b> (flatbuffers::true_type, uoffset_t i, const T &amp;val)</td></tr>
+<tr class="separator:a8473825261d1fca4e384edfeabc0699a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -197,6 +203,34 @@ Protected Attributes</h2></td></tr>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>data_</b> [length *sizeof(T)]</td></tr>
 <tr class="separator:adfb542aeb0528b606187162ed44952df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8055cdf5a0cc33fde943a169a343af77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8055cdf5a0cc33fde943a169a343af77">&#9670;&nbsp;</a></span>is_span_observable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , uint16_t length&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FLATBUFFERS_CONSTEXPR bool <a class="el" href="classflatbuffers_1_1_array.html">flatbuffers::Array</a>&lt; T, length &gt;::is_span_observable</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      (scalar_tag::value &amp;&amp; (FLATBUFFERS_LITTLEENDIAN || <span class="keyword">sizeof</span>(T) == 1)) ||</div>
+<div class="line">      !scalar_tag::value</div>
+</div><!-- fragment -->
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="flatbuffers_8h_source.html">flatbuffers.h</a></li>
 </ul>

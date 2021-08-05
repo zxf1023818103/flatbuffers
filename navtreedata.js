@@ -63,6 +63,7 @@ var NAVTREE =
     [ "Benchmarks", "flatbuffers_benchmarks.html", null ],
     [ "FlatBuffers white paper", "flatbuffers_white_paper.html", null ],
     [ "FlatBuffers internals", "flatbuffers_internals.html", null ],
+    [ "Intermediate Representation", "intermediate_representation.html", null ],
     [ "Grammar of the schema language", "flatbuffers_grammar.html", null ],
     [ "API Reference", "usergroup2.html", [
       [ "APIs", "modules.html", "modules" ],
@@ -86,7 +87,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "classcom_1_1google_1_1flatbuffers_1_1_flex_buffers_1_1_reference.html#a88e02b8243b089486ee6768d3ebf26b9",
-"classflatbuffers_1_1_vector.html#a7703f4b1cbb1f99087b48cd58abb740e"
+"classflatbuffers_1_1_vector.html#a62170e531ab5fcef8b4c717c0e84553d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

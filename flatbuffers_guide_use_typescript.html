@@ -94,19 +94,19 @@ $(document).ready(function(){initNavTree('flatbuffers_guide_use_typescript.html'
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_TypeScriptUsage"></a></p>
-<h1><a class="anchor" id="autotoc_md104"></a>
+<h1><a class="anchor" id="autotoc_md106"></a>
 Before you get started</h1>
 <p>Before diving into the FlatBuffers usage in TypeScript, it should be noted that the <a class="el" href="flatbuffers_guide_tutorial.html">Tutorial</a> page has a complete guide to general FlatBuffers usage in all of the supported languages (including TypeScript). This page is specifically designed to cover the nuances of FlatBuffers usage in TypeScript.</p>
 <p>You should also have read the <a class="el" href="flatbuffers_guide_building.html">Building</a> documentation to build <code>flatc</code> and should be familiar with <a class="el" href="flatbuffers_guide_using_schema_compiler.html">Using the schema compiler</a> and <a class="el" href="flatbuffers_guide_writing_schema.html">Writing a schema</a>.</p>
-<h1><a class="anchor" id="autotoc_md105"></a>
+<h1><a class="anchor" id="autotoc_md107"></a>
 FlatBuffers TypeScript library code location</h1>
 <p>The code for the FlatBuffers TypeScript library can be found at <a href="https://www.npmjs.com/package/flatbuffers">https://www.npmjs.com/package/flatbuffers</a>.</p>
-<h1><a class="anchor" id="autotoc_md106"></a>
+<h1><a class="anchor" id="autotoc_md108"></a>
 Testing the FlatBuffers TypeScript library</h1>
 <p>To run the tests, use the <a href="https://github.com/google/
 flatbuffers/blob/master/tests/TypeScriptTest.sh">TypeScriptTest.sh</a> shell script.</p>
 <p><em>Note: The TypeScript test file requires <a href="https://nodejs.org/en/">Node.js</a>.</em></p>
-<h1><a class="anchor" id="autotoc_md107"></a>
+<h1><a class="anchor" id="autotoc_md109"></a>
 Using the FlatBuffers TypeScript libary</h1>
 <p><em>Note: See <a class="el" href="flatbuffers_guide_tutorial.html">Tutorial</a> for a more in-depth example of how to use FlatBuffers in TypeScript.</em></p>
 <p>FlatBuffers supports both reading and writing FlatBuffers in TypeScript.</p>
@@ -123,7 +123,7 @@ Using the FlatBuffers TypeScript libary</h1>
 </div><!-- fragment --><p>Now you can access values like this:</p>
 <div class="fragment"><div class="line">let hp = monster.hp();</div>
 <div class="line">let pos = monster.pos();</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md108"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md110"></a>
 Object based API</h1>
 <p>FlatBuffers is all about memory efficiency, which is why its base API is written around using as little as possible of it. This does make the API clumsier (requiring pre-order construction of all data, and making mutation harder).</p>
 <p>For times when efficiency is less important a more convenient object based API can be used (through <code>--gen-object-api</code>) that is able to unpack &amp; pack a FlatBuffer into objects and standard TS types.</p>
@@ -143,7 +143,7 @@ Object based API</h1>
 <div class="line">// Serialize into new flatbuffer.</div>
 <div class="line">let fbb = new flatbuffers.Builder(1);</div>
 <div class="line">Monster.finishMonsterBuffer(fbb, monsterobj.pack(fbb));</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md109"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md111"></a>
 Text parsing FlatBuffers in TypeScript</h1>
 <p>There currently is no support for parsing text (Schema's and JSON) directly from TypeScript. </p>
 </div></div><!-- contents -->

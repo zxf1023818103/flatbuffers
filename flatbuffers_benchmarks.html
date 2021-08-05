@@ -120,7 +120,7 @@ $(document).ready(function(){initNavTree('flatbuffers_benchmarks.html',''); init
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Library source code (KB)   </td><td class="markdownTableBodyNone">15   </td><td class="markdownTableBodyNone">some subset of 3800   </td><td class="markdownTableBodyNone">87   </td><td class="markdownTableBodyNone">43   </td><td class="markdownTableBodyNone">327   </td><td class="markdownTableBodyNone">0   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md141"></a>
+<h2><a class="anchor" id="autotoc_md143"></a>
 Some other serialization systems we compared against but did not benchmark (yet), in rough order of applicability:</h2>
 <ul>
 <li>Cap'n'Proto promises to reduce Protocol Buffers much like FlatBuffers does, though with a more complicated binary encoding and less flexibility (no optional fields to allow deprecating fields or serializing with missing fields for which defaults exist). It currently also isn't fully cross-platform portable (lack of VS support).</li>
@@ -130,7 +130,7 @@ Some other serialization systems we compared against but did not benchmark (yet)
 <li>C# comes with built-in serialization functionality, as used by Unity also. Being tied to the language, and having no automatic versioning support limits its applicability.</li>
 <li>Project Anarchy (the free mobile engine by Havok) comes with a serialization system, that however does no automatic versioning (have to code around new fields manually), is very much tied to the rest of the engine, and works without a schema to generate code (tied to your C++ class definition).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md142"></a>
+<h2><a class="anchor" id="autotoc_md144"></a>
 Code for benchmarks</h2>
 <p>Code for these benchmarks sits in <code>benchmarks/</code> in git branch <code>benchmarks</code>. It sits in its own branch because it has submodule dependencies that the main project doesn't need, and the code standards do not meet those of the main project. Please read <code>benchmarks/cpp/README.txt</code> before working with the code.</p>
 <p><br  />

@@ -94,22 +94,22 @@ $(document).ready(function(){initNavTree('flatbuffers_guide_use_c-sharp.html',''
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_CsharpUsage"></a></p>
-<h1><a class="anchor" id="autotoc_md86"></a>
+<h1><a class="anchor" id="autotoc_md88"></a>
 Before you get started</h1>
 <p>Before diving into the FlatBuffers usage in C#, it should be noted that the <a class="el" href="flatbuffers_guide_tutorial.html">Tutorial</a> page has a complete guide to general FlatBuffers usage in all of the supported languages (including C#). This page is designed to cover the nuances of FlatBuffers usage, specific to C#.</p>
 <p>You should also have read the <a class="el" href="flatbuffers_guide_building.html">Building</a> documentation to build <code>flatc</code> and should be familiar with <a class="el" href="flatbuffers_guide_using_schema_compiler.html">Using the schema compiler</a> and <a class="el" href="flatbuffers_guide_writing_schema.html">Writing a schema</a>.</p>
-<h1><a class="anchor" id="autotoc_md87"></a>
+<h1><a class="anchor" id="autotoc_md89"></a>
 FlatBuffers C# code location</h1>
 <p>The code for the FlatBuffers C# library can be found at <code>flatbuffers/net/FlatBuffers</code>. You can browse the library on the <a href="https://github.com/google/flatbuffers/tree/master/net/
 FlatBuffers">FlatBuffers GitHub page</a>.</p>
-<h1><a class="anchor" id="autotoc_md88"></a>
+<h1><a class="anchor" id="autotoc_md90"></a>
 Building the FlatBuffers C# library</h1>
 <p>The <code>FlatBuffers.csproj</code> project contains multitargeting for .NET Standard 2.1, .NET Standard 2.0, and .NET Framework 4.6 (Unity 2017). Support for .NET Framework 3.5 (Unity 5) is provided by the <code>FlatBuffers.net35.csproj</code> project. In most cases (including Unity 2018 and newer), .NET Standard 2.0 is recommended.</p>
 <p>You can build for a specific framework target when using the cross-platform <a href="https://dotnet.microsoft.com/download">.NET Core SDK</a> by adding the <code>-f</code> command line option:</p>
 <div class="fragment"><div class="line">dotnet build -f netstandard2.0 &quot;FlatBuffers.csproj&quot;</div>
 </div><!-- fragment --><p>The <code>FlatBuffers.csproj</code> project also provides support for defining various conditional compilation symbols (see "Conditional compilation symbols" section below) using the <code>-p</code> command line option:</p>
 <div class="fragment"><div class="line">dotnet build -f netstandard2.1 -p:ENABLE_SPAN_T=true -p:UNSAFE_BYTEBUFFER=true &quot;FlatBuffers.csproj&quot;</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md89"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md91"></a>
 Testing the FlatBuffers C# library</h1>
 <p>The code to test the libraries can be found at <code>flatbuffers/tests</code>.</p>
 <p>The test code for C# is located in the <a href="https://github.com/
@@ -117,7 +117,7 @@ google/flatbuffers/tree/master/tests/FlatBuffers.Test">FlatBuffers.Test</a> subf
 <p>Optionally, you can run this using <a href="http://www.mono-project.com/">Mono</a> instead. Once you have installed Mono, you can run the tests from the command line by running the following commands from inside the <code>FlatBuffers.Test</code> folder:</p>
 <div class="fragment"><div class="line">mcs *.cs ../MyGame/Example/*.cs ../../net/FlatBuffers/*.cs</div>
 <div class="line">mono Assert.exe</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md90"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md92"></a>
 Using the FlatBuffers C# library</h1>
 <p><em>Note: See <a class="el" href="flatbuffers_guide_tutorial.html">Tutorial</a> for a more in-depth example of how to use FlatBuffers in C#.</em></p>
 <p>FlatBuffers supports reading and writing binary FlatBuffers in C#.</p>
@@ -142,7 +142,7 @@ Using the FlatBuffers C# library</h1>
 <div class="line"><span class="comment">// method filling a preconstructed object</span></div>
 <div class="line">var preconstructedPos = <span class="keyword">new</span> Vec3();</div>
 <div class="line">monster.GetPos(preconstructedPos);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md91"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md93"></a>
 Storing dictionaries in a FlatBuffer</h1>
 <p>FlatBuffers doesn't support dictionaries natively, but there is support to emulate their behavior with vectors and binary search, which means you can have fast lookups directly from a FlatBuffer without having to unpack your data into a <code>Dictionary</code> or similar.</p>
 <p>To use it:</p><ul>
@@ -151,10 +151,10 @@ Storing dictionaries in a FlatBuffer</h1>
 <li>Instead of calling standard generated method, e.g.: <code>Monster.createTestarrayoftablesVector</code>, call <code>CreateSortedVectorOfMonster</code> in C# which will first sort all offsets such that the tables they refer to are sorted by the key field, then serialize it.</li>
 <li>Now when you're accessing the FlatBuffer, you can use the <code>ByKey</code> accessor to access elements of the vector, e.g.: <code>monster.TestarrayoftablesByKey("Frodo")</code> in C#, which returns an object of the corresponding table type, or <code>null</code> if not found. <code>ByKey</code> performs a binary search, so should have a similar speed to <code>Dictionary</code>, though may be faster because of better caching. <code>ByKey</code> only works if the vector has been sorted, it will likely not find elements if it hasn't been sorted.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md92"></a>
+<h1><a class="anchor" id="autotoc_md94"></a>
 Text parsing</h1>
 <p>There currently is no support for parsing text (Schema's and JSON) directly from C#, though you could use the C++ parser through native call interfaces available to each language. Please see the C++ documentation for more on text parsing.</p>
-<h1><a class="anchor" id="autotoc_md93"></a>
+<h1><a class="anchor" id="autotoc_md95"></a>
 Object based API</h1>
 <p>FlatBuffers is all about memory efficiency, which is why its base API is written around using as little as possible of it. This does make the API clumsier (requiring pre-order construction of all data, and making mutation harder).</p>
 <p>For times when efficiency is less important a more convenient object based API can be used (through <code>--gen-object-api</code>) that is able to unpack &amp; pack a FlatBuffer into objects and standard <code>System.Collections.Generic</code> containers, allowing for convenient construction, access and mutation.</p>
@@ -169,7 +169,7 @@ Object based API</h1>
 <div class="line"><span class="comment">// Serialize into new flatbuffer.</span></div>
 <div class="line">FlatBufferBuilder fbb = <span class="keyword">new</span> FlatBufferBuilder(1);</div>
 <div class="line">fbb.Finish(Monster.Pack(fbb, monsterobj).Value);</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md94"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md96"></a>
 Json Serialization</h2>
 <p>An additional feature of the object API is the ability to allow you to serialize &amp; deserialize a JSON text. To use Json Serialization, add <code>--cs-gen-json-serializer</code> option to <code>flatc</code> and add <code>Newtonsoft.Json</code> nuget package to csproj.</p>
 <div class="fragment"><div class="line"><span class="comment">// Deserialize MonsterT from json</span></div>
@@ -188,7 +188,7 @@ Json Serialization</h2>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md95"></a>
+<h1><a class="anchor" id="autotoc_md97"></a>
 Conditional compilation symbols</h1>
 <p>There are three conditional compilation symbols that have an impact on performance/features of the C# <code>ByteBuffer</code> implementation.</p>
 <ul>

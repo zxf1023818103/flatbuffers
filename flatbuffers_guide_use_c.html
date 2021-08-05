@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('flatbuffers_guide_use_c.html',''); ini
 <p>The C language binding exists in a separate project named <a href="https://github.com/dvidelabs/flatcc">FlatCC</a>.</p>
 <p>The <code>flatcc</code> C schema compiler can generate code offline as well as online via a C library. It can also generate buffer verifiers and fast JSON parsers, printers.</p>
 <p>Great care has been taken to ensure compatibily with the main <code>flatc</code> project.</p>
-<h1><a class="anchor" id="autotoc_md59"></a>
+<h1><a class="anchor" id="autotoc_md60"></a>
 General Documention</h1>
 <ul>
 <li><a class="el" href="flatbuffers_guide_tutorial.html">Tutorial</a> - select C as language when scrolling down</li>
@@ -106,7 +106,7 @@ General Documention</h1>
 <li><a href="https://github.com/dvidelabs/flatcc/blob/master/samples/monster/monster.c">The Monster Sample in C</a></li>
 <li><a href="https://github.com/dvidelabs/flatcc">GitHub</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md60"></a>
+<h1><a class="anchor" id="autotoc_md61"></a>
 Supported Platforms</h1>
 <ul>
 <li>Ubuntu (clang / gcc, ninja / gnu make)</li>
@@ -116,7 +116,7 @@ Supported Platforms</h1>
 <p>CI builds recent versions of gcc, clang and MSVC on OS-X, Ubuntu, and Windows, and occasionally older compiler versions. See main project <a href="https://github.com/dvidelabs/flatcc#status">Status</a>.</p>
 <p>Other platforms may well work, including Centos, but are not tested regularly.</p>
 <p>The monster sample project was specifically written for C99 in order to follow the C++ version and for that reason it will not work with MSVC 2010.</p>
-<h1><a class="anchor" id="autotoc_md61"></a>
+<h1><a class="anchor" id="autotoc_md62"></a>
 Modular Object Creation</h1>
 <p>In the tutorial we used the call <code>Monster_create_as_root</code> to create the root buffer object since this is easier in simple use cases. Sometimes we need more modularity so we can reuse a function to create nested tables and root tables the same way. For this we need the <code>flatcc_builder_buffer_create_call</code>. It is best to keep <code>flatcc_builder</code> calls isolated at the top driver level, so we get:</p>
 <div class="language-c"> <div class="fragment"><div class="line">ns(Monster_ref_t) create_orc(flatcc_builder_t *B)</div>
@@ -144,7 +144,7 @@ Modular Object Creation</h1>
 <div class="line">    flatcc_builder_clear(B);</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><p>The same principle applies with <code>start/end</code> vs <code>start/end_as_root</code> in the top-down approach.</p>
-<h1><a class="anchor" id="autotoc_md62"></a>
+<h1><a class="anchor" id="autotoc_md63"></a>
 Top Down Example</h1>
 <p>The tutorial uses a bottom up approach. In C it is also possible to use a top-down approach by starting and ending objects nested within each other. In the tutorial there is no deep nesting, so the difference is limited, but it shows the idea:</p>
 <div class="language-c"> <br  />
@@ -189,10 +189,10 @@ Top Down Example</h1>
 <div class="line">ns(Monster_equipped_Weapon_add(B, axe));</div>
 <div class="line"> </div>
 <div class="line">ns(Monster_end_as_root(B));</div>
-</div><!-- fragment --> </div><h1><a class="anchor" id="autotoc_md63"></a>
+</div><!-- fragment --> </div><h1><a class="anchor" id="autotoc_md64"></a>
 Basic Reflection</h1>
 <p>The C-API does support reading binary schema (.bfbs) files via code generated from the <code>reflection.fbs</code> schema, and an <a href="https://github.com/dvidelabs/flatcc/tree/master/samples/reflection">example usage</a> shows how to use this. The reflection schema files are pre-generated in the <a href="https://github.com/dvidelabs/flatcc/tree/master/include/flatcc/reflection">runtime distribution</a>.</p>
-<h1><a class="anchor" id="autotoc_md64"></a>
+<h1><a class="anchor" id="autotoc_md65"></a>
 Mutations and Reflection</h1>
 <p>The C-API does not support mutating reflection like C++ does, nor does the reader interface support mutating scalars (and it is generally unsafe to do so even after verification).</p>
 <p>The generated reader interface supports sorting vectors in-place after casting them to a mutating type because it is not practical to do so while building a buffer. This is covered in the builder documentation. <br  />
@@ -200,15 +200,15 @@ Mutations and Reflection</h1>
 <p>It is possible to build new buffers using complex objects from existing buffers as source. This can be very efficient due to direct copy semantics without endian conversion or temporary stack allocation.</p>
 <p>Scalars, structs and strings can be used as source, as well vectors of these.</p>
 <p>It is currently not possible to use an existing table or vector of table as source, but it would be possible to add support for this at some point.</p>
-<h1><a class="anchor" id="autotoc_md65"></a>
+<h1><a class="anchor" id="autotoc_md66"></a>
 Namespaces</h1>
 <p>The <code>FLATBUFFERS_WRAP_NAMESPACE</code> approach used in the tutorial is convenient when each function has a very long namespace prefix. But it isn't always the best approach. If the namespace is absent, or simple and informative, we might as well use the prefix directly. The <a href="https://github.com/dvidelabs/flatcc/blob/master/samples/reflection/bfbs2json.c">reflection example</a> mentioned above uses this approach.</p>
-<h1><a class="anchor" id="autotoc_md66"></a>
+<h1><a class="anchor" id="autotoc_md67"></a>
 Checking for Present Members</h1>
 <p>Not all languages support testing if a field is present, but in C we can elaborate the reader section of the tutorial with tests for this. Recall that <code>mana</code> was set to the default value <code>150</code> and therefore shouldn't be present.</p>
 <div class="language-c"> <div class="fragment"><div class="line"><span class="keywordtype">int</span> hp_present = ns(Monster_hp_is_present(monster)); <span class="comment">// 1</span></div>
 <div class="line"><span class="keywordtype">int</span> mana_present = ns(Monster_mana_is_present(monster)); <span class="comment">// 0</span></div>
-</div><!-- fragment --> </div><h1><a class="anchor" id="autotoc_md67"></a>
+</div><!-- fragment --> </div><h1><a class="anchor" id="autotoc_md68"></a>
 Alternative ways to add a Union</h1>
 <p>In the tutorial we used a single call to add a union. Here we show different ways to accomplish the same thing. The last form is rarely used, but is the low-level way to do it. It can be used to group small values together in the table by adding type and data at different points in time.</p>
 <div class="language-c"> <div class="fragment"><div class="line">ns(Equipment_union_ref_t) equipped = ns(Equipment_as_Weapon(axe));</div>
@@ -218,7 +218,7 @@ Alternative ways to add a Union</h1>
 <div class="line"><span class="comment">// or alternatively</span></div>
 <div class="line">ns(Monster_equipped_add_type(B, ns(Equipment_Weapon));</div>
 <div class="line">ns(Monster_equipped_add_member(B, axe));</div>
-</div><!-- fragment --> </div><h1><a class="anchor" id="autotoc_md68"></a>
+</div><!-- fragment --> </div><h1><a class="anchor" id="autotoc_md69"></a>
 Why not integrate with the &lt;tt&gt;flatc&lt;/tt&gt; tool?</h1>
 <p><a href="https://github.com/dvidelabs/flatcc/issues/1">It was considered how the C code generator could be integrated into the <code>flatc</code> tool</a>, but it would either require that the standalone C implementation of the schema compiler was dropped, or it would lead to excessive code duplication, or a complicated intermediate representation would have to be invented. Neither of these alternatives are very attractive, and it isn't a big deal to use the <code>flatcc</code> tool instead of <code>flatc</code> given that the FlatBuffers C runtime library needs to be made available regardless. </p>
 </div></div><!-- contents -->
