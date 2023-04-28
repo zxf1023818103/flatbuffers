@@ -42,7 +42,6 @@
 #  include "arrays_test_generated.h"
 #endif
 #include "64bit/offset64_test.h"
-
 #include "flexbuffers_test.h"
 #include "is_quiet_nan.h"
 #include "monster_test_bfbs_generated.h"  // Generated using --bfbs-comments --bfbs-builtins --cpp --bfbs-gen-embed
@@ -74,7 +73,7 @@ static_assert(flatbuffers::is_same<uint8_t, char>::value ||
 using namespace MyGame::Example;
 
 void TriviallyCopyableTest() {
-// clang-format off
+  // clang-format off
   #if __GNUG__ && __GNUC__ < 5 && \
       !(defined(__clang__) && __clang_major__ >= 16)
     TEST_EQ(__has_trivial_copy(Vec3), true);
@@ -913,7 +912,7 @@ void NativeTypeTest() {
 // Guard against -Wunused-function on platforms without file tests.
 #ifndef FLATBUFFERS_NO_FILE_TESTS
 // VS10 does not support typed enums, exclude from tests
-#if !defined(_MSC_VER) || _MSC_VER >= 1700
+#  if !defined(_MSC_VER) || _MSC_VER >= 1700
 void FixedLengthArrayJsonTest(const std::string &tests_data_path, bool binary) {
   // load FlatBuffer schema (.fbs) and JSON from disk
   std::string schemafile;
@@ -1033,7 +1032,7 @@ void FixedLengthArraySpanTest(const std::string &tests_data_path) {
         std::equal(const_d_c.begin(), const_d_c.end(), mutable_d_c.begin()));
   }
   // test little endian array of int32
-#  if FLATBUFFERS_LITTLEENDIAN
+#    if FLATBUFFERS_LITTLEENDIAN
   {
     flatbuffers::span<const int32_t, 2> const_d_a =
         flatbuffers::make_span(*const_nested.a());
@@ -1048,12 +1047,12 @@ void FixedLengthArraySpanTest(const std::string &tests_data_path) {
     TEST_ASSERT(
         std::equal(const_d_a.begin(), const_d_a.end(), mutable_d_a.begin()));
   }
-#  endif
+#    endif
 }
-#else
+#  else
 void FixedLengthArrayJsonTest(bool /*binary*/) {}
 void FixedLengthArraySpanTest() {}
-#endif
+#  endif
 
 void TestEmbeddedBinarySchema(const std::string &tests_data_path) {
   // load JSON from disk
@@ -1461,9 +1460,7 @@ void NativeInlineTableVectorTest() {
   TestNativeInlineTableT unpacked;
   root->UnPackTo(&unpacked);
 
-  for (int i = 0; i < 10; ++i) {
-    TEST_ASSERT(unpacked.t[i] == test.t[i]);
-  }
+  for (int i = 0; i < 10; ++i) { TEST_ASSERT(unpacked.t[i] == test.t[i]); }
 
   TEST_ASSERT(unpacked.t == test.t);
 }
@@ -1627,6 +1624,7 @@ int FlatBufferTests(const std::string &tests_data_path) {
   Offset64SerializedFirst();
   Offset64NestedFlatBuffer();
   Offset64CreateDirect();
+  Offset64Evolution();
   return 0;
 }
 }  // namespace
