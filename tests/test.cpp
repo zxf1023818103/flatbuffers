@@ -1625,6 +1625,7 @@ int FlatBufferTests(const std::string &tests_data_path) {
   FixedSizedStructArrayKeyInStructTest();
   Offset64Test();
   Offset64SerializedFirst();
+  Offset64NestedFlatBuffer();
   return 0;
 }
 }  // namespace
